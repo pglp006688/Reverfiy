@@ -8,9 +8,14 @@ inputs:
     description: 'Path to the HTML file or directory to protect'
     required: false
     default: 'index.html'
+  output:
+    description: 'Directory to copy the protected site into (optional)'
+    required: false
+    default: ''
 runs:
   using: 'composite'
   steps:
     - name: Inject Reverfiy
       shell: bash
-      run: node "${{ github.action_path }}/inject.js" "${{ inputs.path }}"
+      working-directory: ${{ github.workspace }}
+      run: node "${{ github.action_path }}/inject.js" "${{ inputs.path }}" "${{ inputs.output }}"
