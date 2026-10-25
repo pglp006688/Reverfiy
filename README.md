@@ -43,7 +43,7 @@ reverfiy.js
 
 以及 `.github/workflows/deploy.yml`（见下一步）。
 
-**方式 B：引用独立 Action**（推荐，需 Reverfiy 已发布为独立仓库）
+**方式 B：引用独立 Action**（推荐)
 
 ```yaml
 uses: pglp006688/Reverfiy@v1
