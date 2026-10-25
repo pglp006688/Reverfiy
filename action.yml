@@ -1,0 +1,16 @@
+name: 'Reverfiy'
+description: 'Inject a Turnstile-style human verification layer into your static site before deploying to GitHub Pages'
+branding:
+  icon: 'shield'
+  color: 'orange'
+inputs:
+  path:
+    description: 'Path to the HTML file to protect'
+    required: false
+    default: 'index.html'
+runs:
+  using: 'composite'
+  steps:
+    - name: Inject Reverfiy
+      shell: bash
+      run: node "${{ github.action_path }}/inject.js" "${{ inputs.path }}"
