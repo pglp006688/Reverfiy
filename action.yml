@@ -5,7 +5,7 @@ branding:
   color: 'orange'
 inputs:
   path:
-    description: 'Path to the HTML file to protect'
+    description: 'Path to the HTML file or directory to protect'
     required: false
     default: 'index.html'
 runs:
