@@ -2,12 +2,10 @@ name: Deploy with Reverfiy
 on:
   push:
     branches: [main]
-
 permissions:
   contents: read
   pages: write
   id-token: write
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -16,16 +14,12 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-
-      # 引用本仓库根目录的 Reverfiy action
       - name: Inject Reverfiy
         uses: ./
         with:
           path: index.html
-
       - uses: actions/upload-pages-artifact@v3
         with:
           path: .
-
       - id: deployment
         uses: actions/deploy-pages@v4
