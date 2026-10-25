@@ -6,6 +6,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  actions: write
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -14,12 +15,23 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+
+      - name: Delete stale github-pages artifacts
+        uses: geekyeggo/delete-artifact@v5
+        with:
+          name: github-pages
+          failOnError: false
+        continue-on-error: true
+
       - name: Inject Reverfiy
         uses: ./
         with:
           path: index.html
+          output: dist
+
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: dist
+
       - id: deployment
         uses: actions/deploy-pages@v4
