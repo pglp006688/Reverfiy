@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reverfiy Demo</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #0f1116 0%, #1a1f2e 100%);
+      color: #fff;
+      padding: 24px;
+    }
+    .hero { max-width: 640px; text-align: center; }
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: #f6821f;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+    h1 { font-size: 2rem; margin-bottom: 12px; }
+    p { font-size: 1rem; color: #a0a6b5; line-height: 1.6; margin-bottom: 8px; }
+    .tag {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(246,130,31,.15);
+      color: #f6821f;
+      font-size: 13px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="logo">✓</div>
+    <h1>Reverfiy</h1>
+    <p>你已通过人机验证，可以正常访问本页面。</p>
+    <p>本页面由 GitHub Actions 在部署阶段自动注入验证层。</p>
+    <span class="tag">Protected by Reverfiy</span>
+  </div>
+</body>
+</html>
